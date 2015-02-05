@@ -1,0 +1,2 @@
+defmodule EctoAdmin do
+end
