@@ -1,0 +1,14 @@
+<table class="table table-bordered table-striped">
+  <tr>
+  <%= for field <- @fields do %>
+    <th><%= field %></th>
+  <% end %>
+</tr>
+  <%= for instance <- @instances do %>
+  <tr>
+    <%= for field <- @fields do %>
+      <td><%= Keyword.get(instance, field) %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>

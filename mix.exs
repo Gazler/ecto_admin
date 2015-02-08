@@ -14,7 +14,7 @@ defmodule EctoAdmin.Mixfile do
   def application do
     [
       mod: {EctoAdmin, []},
-      applications: [:logger]
+      applications: [:logger, :postgrex, :ecto]
     ]
   end
 
@@ -28,6 +28,9 @@ defmodule EctoAdmin.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    []
+    [
+      {:postgrex, ">= 0.0.0"},
+      {:ecto, "~> 0.5"},
+    ]
   end
 end
