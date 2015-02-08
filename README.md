@@ -1,5 +1,7 @@
 # EctoAdmin
 
+[![Build Status](https://travis-ci.org/Gazler/ecto_admin.svg)](https://travis-ci.org/Gazler/ecto_admin)
+
 EctoAdmin is a web based administration tool for Ecto models. It should work
 with any Plug based project.
 
