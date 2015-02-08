@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+  </head>
+  <title>Ecto Admin</title>
+  <body>
+   <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/admin">Ecto Admin</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/admin/">Home</a></li>
+          <%= for model <- @models do %>
+            <li><a href="/admin/<%= model %>"><%= model %></a></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <%= @inner %>
+    </div>
+  </body>
+</html>
+
