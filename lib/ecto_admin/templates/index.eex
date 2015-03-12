@@ -12,3 +12,5 @@
   </tr>
   <% end %>
 </table>
+
+<a href="/admin/<%= @resource_path %>/new" class="btn btn-primary">New <%= @resource %></a>

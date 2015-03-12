@@ -11,6 +11,7 @@ defmodule EctoAdmin.Router do
   plug :match
   plug :dispatch
 
+
   match _ do
     conn
     |> handle_request(conn.method, tl(conn.path_info))
@@ -24,7 +25,7 @@ defmodule EctoAdmin.Router do
   defp handle_request(conn, method, path = [resource | _tail]) do
     case get_resource(EctoAdmin.Config.models, resource) do
       nil      -> {conn, 404, "Resource Not Found"}
-      resource -> {conn, 200, EctoAdmin.Resource.render(method, tl(path), resource)}
+      resource -> EctoAdmin.Resource.render(conn, method, tl(path), resource)
     end
   end
 
@@ -36,7 +37,7 @@ defmodule EctoAdmin.Router do
 
   def get_resource(models, resource) do
     if valid_resource?(models, resource) do
-      Keyword.get(models, String.to_atom(resource))
+      {String.to_atom(resource), Keyword.get(models, String.to_atom(resource))}
     else
       nil
     end

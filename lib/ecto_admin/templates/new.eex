@@ -1,0 +1,11 @@
+<h2>New <%= @resource%></h2>
+
+<form action="/admin/<%= @resource_path %>" method="post">
+  <%= for {field, type} <- @fields do %>
+    <div class="form-group">
+      <label><%= field %></label>
+      <%= EctoAdmin.View.form_field(type, field) %>
+    </div>
+  <% end %>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
