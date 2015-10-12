@@ -1,5 +1,7 @@
 # EctoAdmin
 
+**This project is not maintained. Check out [ExAdmin](https://github.com/smpallen99/ex_admin) for a more complete admin solution.**
+
 [![Build Status](https://travis-ci.org/Gazler/ecto_admin.svg)](https://travis-ci.org/Gazler/ecto_admin)
 
 EctoAdmin is a web based administration tool for Ecto models. It should work
